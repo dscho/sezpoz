@@ -1,0 +1,42 @@
+import java.io.File;
+import java.net.URLClassLoader;
+
+import net.java.sezpoz.Index;
+
+// where are the artifacts?
+
+coreJar = new File(basedir, "core/target/testlib-core-1.0.0.jar");
+implJar = new File(basedir, "impl/target/testlib-impl-1.0.0.jar");
+
+// test listClasses() with only testlib-core.jar in the class path
+
+loader = Index.class.getClassLoader();
+loader = new URLClassLoader(new URL[] { coreJar.toURI().toURL() }, loader);
+main = loader.loadClass("com.example.Main").newInstance();
+
+list = main.listClasses(loader);
+size = list.size();
+if (size != 0) {
+    print("Unexpected list size (expected 0): " + size);
+    return false;
+}
+
+// test listClasses() with a class loader whose parent covers testlib-core.jar
+
+loader = new URLClassLoader(new URL[] { implJar.toURI().toURL() }, loader);
+
+list = main.listClasses(loader);
+size = list.size();
+if (size != 1) {
+    print("Unexpected list size (expected 1): " + size);
+    return false;
+}
+
+// test that the class could be loaded
+
+expect = "Hello, World!";
+output = list.get(0).newInstance().get();
+if (!expect.equals(output)) {
+    print("Unexpected output (expected " + expect + "): " + output);
+    return false;
+}
