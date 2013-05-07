@@ -16,9 +16,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:svn:http://svn.java.net/svn/sezpoz~svn/trunk/</connection>
-        <developerConnection>scm:svn:https://svn.java.net/svn/sezpoz~svn/trunk/</developerConnection>
-        <url>http://java.net/projects/sezpoz/sources/svn/show/trunk/</url>
+        <connection>scm:git:https://github.com/dscho/sezpoz</connection>
+        <developerConnection>scm:git:git@github.com:dscho/sezpoz</developerConnection>
+        <url>https://github.com/dscho/sezpoz</url>
     </scm>
     <issueManagement>
         <system>JIRA</system>
