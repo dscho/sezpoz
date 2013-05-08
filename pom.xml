@@ -4,7 +4,7 @@
     <groupId>net.java.sezpoz</groupId>
     <artifactId>pom</artifactId>
     <packaging>pom</packaging>
-    <version>1.10-imagej-SNAPSHOT</version>
+    <version>1.9-imagej</version>
     <name>SezPoz</name>
     <url>http://sezpoz.java.net/</url>
     <description>SezPoz is a lightweight and simple-to-learn library that lets you perform modular service lookups.</description>
@@ -19,7 +19,8 @@
         <connection>scm:git:https://github.com/dscho/sezpoz</connection>
         <developerConnection>scm:git:git@github.com:dscho/sezpoz</developerConnection>
         <url>https://github.com/dscho/sezpoz</url>
-    </scm>
+      <tag>pom-1.9-imagej</tag>
+  </scm>
     <issueManagement>
         <system>JIRA</system>
         <url>http://java.net/jira/browse/SEZPOZ</url>
